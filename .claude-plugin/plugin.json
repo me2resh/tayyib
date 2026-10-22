@@ -1,0 +1,11 @@
+{
+  "name": "tayyib",
+  "displayName": "Tayyib",
+  "version": "1.0.0",
+  "description": "A hard halal gate for any financial product or employer, to the AAOIFI standard: one verdict, the ratios, two sources that must agree, the purification owed, the re-screen date. Arabic by default, English on request.",
+  "author": { "name": "Ahmed Mohamed", "url": "https://github.com/me2resh/tayyib" },
+  "homepage": "https://me2resh.github.io/tayyib/",
+  "repository": "https://github.com/me2resh/tayyib",
+  "license": "MIT",
+  "keywords": ["halal", "shariah", "AAOIFI", "screening", "stocks", "funds", "savings", "employer", "Islamic finance", "Arabic"]
+}

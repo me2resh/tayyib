@@ -1,0 +1,14 @@
+{
+  "name": "tayyib",
+  "description": "Tayyib: halal screening as a hard gate, as a plugin.",
+  "owner": { "name": "Ahmed Mohamed", "url": "https://github.com/me2resh" },
+  "plugins": [
+    {
+      "name": "tayyib",
+      "source": ".",
+      "description": "Halal screening to the AAOIFI standard for stocks, funds, cash products, wrappers and employers. One verdict, two agreeing sources, purification, re-screen date. Arabic by default.",
+      "version": "1.0.0",
+      "category": "finance"
+    }
+  ]
+}

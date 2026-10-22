@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tayyib</title>
+<meta name="description" content="طيّب: بوابة حلال صارمة لكل ما يمسّه المال، وفق معيار أيوفي. Tayyib: a hard halal gate for everything money touches, to the AAOIFI standard.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#eef1ee;--raised:#f7f9f7;--ink:#142420;--muted:#5a6a63;--rule:#cdd6d0;--rule-strong:#142420;
+  --green:#1f6f4a;--green-ink:#fff;--amber:#b4761a;--red:#a3382e;--grey:#6e7a74;--code:#e2e8e3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0f1613;--raised:#162019;--ink:#e6ede8;--muted:#98a89f;--rule:#28352e;--rule-strong:#e6ede8;
+  --green:#5fc48f;--green-ink:#0f1613;--amber:#e0a93a;--red:#e07a6c;--grey:#9aa59f;--code:#1b2621}}
+:root[data-theme="dark"]{--paper:#0f1613;--raised:#162019;--ink:#e6ede8;--muted:#98a89f;--rule:#28352e;--rule-strong:#e6ede8;--green:#5fc48f;--green-ink:#0f1613;--amber:#e0a93a;--red:#e07a6c;--grey:#9aa59f;--code:#1b2621}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:clip;background:var(--paper);color:var(--ink);font-size:17px;line-height:1.7}
+html[lang="ar"] body{font-family:"IBM Plex Sans Arabic","Noto Naskh Arabic",Tahoma,sans-serif}
+html[lang="en"] body{font-family:"Source Serif 4",Georgia,serif;line-height:1.6}
+html[lang="en"] h1,html[lang="en"] h2,html[lang="en"] h3,html[lang="en"] .ui,html[lang="en"] table,html[lang="en"] button,html[lang="en"] nav,html[lang="en"] .tag{font-family:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] .ui,html[lang="ar"] table,html[lang="ar"] button,html[lang="ar"] nav,html[lang="ar"] .tag{font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+/* language blocks */
+html[lang="ar"] .en{display:none!important}html[lang="en"] .ar{display:none!important}
+.wrap{max-width:1080px;width:100%;margin:0 auto;padding:0 20px}
+a{color:inherit}:focus-visible{outline:3px solid var(--green);outline-offset:3px;border-radius:2px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0 0;font-size:15px;gap:12px}
+nav .brand{font-family:"Aref Ruqaa",serif;font-size:26px;text-decoration:none;line-height:1}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:18px}nav ul a{text-decoration:none;color:var(--muted)}nav ul a:hover{color:var(--ink)}
+.lang{background:none;border:1.5px solid var(--rule-strong);border-radius:999px;padding:6px 14px;cursor:pointer;font:inherit;font-size:14px;color:var(--ink)}
+.lang:hover{background:var(--raised)}
+header{padding:48px 0 44px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:40px;align-items:start}
+.wordmark{display:block;width:min(340px,80%);height:auto;margin:0 0 6px}
+.wordmark text{font-family:"Aref Ruqaa",serif;fill:var(--ink)}
+.latin{font-size:15px;color:var(--muted);letter-spacing:.14em;margin:0 0 20px}
+h1{font-size:clamp(34px,5.6vw,56px);line-height:1.15;letter-spacing:-.01em;margin:0 0 14px;font-weight:700}
+html[lang="ar"] h1{letter-spacing:0;line-height:1.35}
+.tag{font-size:19px;line-height:1.6;color:var(--muted);margin:0 0 24px;max-width:34ch}
+.cta a{display:inline-block;padding:12px 18px;border-radius:4px;text-decoration:none;font-weight:600;font-size:16px;margin:0 0 10px 10px;border:1.5px solid var(--rule-strong)}
+html[lang="en"] .cta a{margin:0 10px 10px 0}
+.cta a.primary{background:var(--ink);color:var(--paper);border-color:var(--ink)}.cta a.primary:hover{background:var(--green);border-color:var(--green);color:var(--green-ink)}
+.cta a.quiet:hover{background:var(--raised)}
+/* the verdict sheet in the hero */
+.sheet{--p-ink:#142420;--p-muted:#5a6a63;--p-rule:#d5dcd7;--p-rule-strong:#142420;background:#fff;color:var(--p-ink);padding:30px 34px 26px;border-radius:2px;box-shadow:0 1px 0 rgba(0,0,0,.06),0 12px 32px rgba(0,0,0,.18);font-size:14.5px;line-height:1.6}
+html[lang="en"] .sheet{font-family:"Source Serif 4",Georgia,serif}
+.sheet .dochead{display:flex;justify-content:space-between;gap:16px;align-items:baseline;border-bottom:2px solid var(--p-rule-strong);padding-bottom:8px;margin-bottom:8px}
+.sheet .dochead b{font-size:17px;font-weight:600}.sheet .dochead span{color:var(--p-muted);font-size:12.5px;white-space:nowrap}
+.sheet h3{margin:14px 0 4px;font-size:14.5px;font-weight:600;color:var(--p-ink)}
+.sheet p{margin:0 0 6px}
+.sheet table{width:100%;border-collapse:collapse;font-size:12.5px;line-height:1.4;min-width:0}
+.sheet th,.sheet td{text-align:start;vertical-align:top;padding:6px 0 6px 10px;border-bottom:1px solid var(--p-rule)}
+html[lang="en"] .sheet th,html[lang="en"] .sheet td{padding:6px 10px 6px 0}
+.sheet th{color:var(--p-muted);font-weight:500}.sheet thead th{border-bottom:1px solid var(--p-rule-strong)}
+.sheet sup{font-size:9px;color:var(--amber);margin-inline-start:2px}
+.m{font-weight:700;font-size:11.5px}.m.ok{color:var(--green)}.m.inf{color:var(--amber)}.m.no{color:var(--red)}.m.unk{color:var(--grey)}
+.stamp{display:inline-block;border:2.5px solid var(--green);color:var(--green);border-radius:6px;padding:4px 12px;font-weight:700;font-size:15px;letter-spacing:.02em;transform:rotate(-3deg);margin:4px 0 6px}
+@media (prefers-reduced-motion:no-preference){.stamp{opacity:0;transform:rotate(-3deg) scale(1.5);animation:stamp .5s cubic-bezier(.2,.9,.3,1.2) .6s forwards}@keyframes stamp{to{opacity:1;transform:rotate(-3deg) scale(1)}}}
+.sheet .docfoot{display:flex;justify-content:space-between;border-top:1px solid var(--p-rule);margin-top:16px;padding-top:8px;color:var(--p-muted);font-size:12px}
+.sheet .docfoot a{color:var(--p-ink)}
+section{padding:44px 0;border-top:1px solid var(--rule)}
+h2{font-size:28px;margin:0 0 8px;font-weight:600;line-height:1.3}
+.lead{margin:0 0 22px;max-width:64ch;color:var(--muted);font-size:17px}
+/* the gate: a real sequence, so it is numbered */
+.gate{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule);counter-reset:g}
+.gate li{display:grid;grid-template-columns:48px 1fr 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--rule);align-items:start}
+.gate li::before{counter-increment:g;content:counter(g);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--green);color:var(--green-ink);font-weight:700;font-size:15px}
+.gate li b{font-size:17px;font-weight:600;display:block;margin-bottom:2px}.gate li span{color:var(--muted);font-size:15.5px}
+.types{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--rule)}
+.types div{padding:16px 0;border-bottom:1px solid var(--rule)}.types h3{margin:0 0 4px;font-size:19px;font-weight:600}.types p{margin:0;color:var(--muted);font-size:15.5px}
+.verdicts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.verdicts div{border-top:3px solid var(--rule);padding-top:10px}.verdicts div:nth-child(1){border-color:var(--green)}.verdicts div:nth-child(2){border-color:var(--amber)}.verdicts div:nth-child(3){border-color:var(--red)}
+.verdicts b{display:block;font-size:18px;margin-bottom:4px}.verdicts p{margin:0;color:var(--muted);font-size:15px}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--rule);margin:0 0 18px}
+.tabs button{background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-1px;color:var(--muted);padding:10px 0;margin-inline-end:22px;cursor:pointer;font-size:15px;font-weight:500}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--green)}
+.view{display:none}.view.on{display:block}
+.install{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+pre{background:var(--code);border-radius:6px;padding:14px 16px;overflow:auto;font-size:13.5px;line-height:1.5;margin:0;direction:ltr;text-align:left}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;direction:ltr;unicode-bidi:embed}
+.note{font-size:14px;color:var(--muted)}
+.ask{list-style:none;padding:0;margin:0;border-top:1px solid var(--rule)}.ask li{padding:10px 0;border-bottom:1px solid var(--rule)}
+html[lang="en"] .ask li{font-style:italic}
+.rules{columns:2;column-gap:40px;margin:0;padding:0;list-style:none}.rules li{break-inside:avoid;padding:0 0 16px}
+.rules b{display:block;font-weight:600;font-size:17px;margin-bottom:2px}.rules span{color:var(--muted);font-size:15.5px}
+footer{padding:32px 0 56px;color:var(--muted);font-size:14px;border-top:1px solid var(--rule)}
+.scroll{overflow-x:auto}
+@media (max-width:860px){header{grid-template-columns:1fr;gap:28px;padding:32px 0 30px}.gate li{grid-template-columns:40px 1fr;gap:12px}.gate li span{grid-column:2}.types,.install{grid-template-columns:1fr;gap:0}.verdicts{grid-template-columns:1fr}.rules{columns:1}nav ul{display:none}.sheet{padding:20px 18px 18px}.sheet .dochead{flex-direction:column;gap:2px}.sheet .dochead span{white-space:normal}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Page">
+  <a class="brand" href="#">طيّب</a>
+  <ul class="ar"><li><a href="#gate">البوابة</a></li><li><a href="#types">ما يُفحص</a></li><li><a href="#samples">نماذج الأحكام</a></li><li><a href="#install">التثبيت</a></li><li><a href="https://github.com/me2resh/tayyib">GitHub</a></li></ul>
+  <ul class="en"><li><a href="#gate">The gate</a></li><li><a href="#types">What it screens</a></li><li><a href="#samples">Sample verdicts</a></li><li><a href="#install">Install</a></li><li><a href="https://github.com/me2resh/tayyib">GitHub</a></li></ul>
+  <button class="lang" id="lang" type="button"><span class="ar">English</span><span class="en">العربية</span></button>
+</nav>
+
+<header>
+  <div>
+    <svg class="wordmark" viewBox="0 0 420 170" role="img" aria-label="طيّب"><text x="210" y="128" text-anchor="middle" font-size="150">طَيِّب</text><line x1="60" y1="152" x2="360" y2="152" stroke="currentColor" stroke-width="1.2" opacity=".45"/></svg>
+    <p class="latin ui">TAYYIB</p>
+    <div class="ar">
+      <h1>بوابة حلال صارمة لكل ما يمسّه المال.</h1>
+      <p class="tag">أسهم وصناديق وحسابات ادخار ومحافظ وجهات عمل. حكم واحد وفق معيار أيوفي، مع النسب، ومصدرين مستقلين يجب أن يتفقا، ومبلغ التطهير، وتاريخ إعادة الفحص. إضافة لوكلاء البرمجة مثل Claude Code وCodex وCursor.</p>
+      <div class="cta"><a class="primary" href="#install">التثبيت</a><a class="quiet" href="#samples">اقرأ حكمًا كاملًا</a></div>
+    </div>
+    <div class="en">
+      <h1>A hard halal gate for everything money touches.</h1>
+      <p class="tag">Stocks, funds, savings, pensions and employers. One verdict to the AAOIFI standard, with the ratios, two independent sources that must agree, the purification owed and the date to check again. An add-on for Claude Code, Codex and Cursor.</p>
+      <div class="cta"><a class="primary" href="#install">Install</a><a class="quiet" href="#samples">Read a full verdict</a></div>
+    </div>
+  </div>
+
+  <article class="sheet" aria-label="Sample verdict">
+    <div class="ar">
+      <div class="dochead"><b>Quillmark Industries: حكم طيّب</b><span>تاريخ الفحص: 10 فبراير 2026</span></div>
+      <span class="stamp">✅ نظيف</span>
+      <h3>3. النسب المالية</h3>
+      <div class="scroll"><table><thead><tr><th>النسبة</th><th>القيمة</th><th>الحد</th><th>العلامة</th></tr></thead>
+      <tr><td>الدخل غير المتوافق / الإيراد</td><td>0.6%</td><td>أقل من 5%</td><td><span class="m ok">✅</span><sup>2</sup></td></tr>
+      <tr><td>الدين / القيمة السوقية</td><td>18%</td><td>أقل من 33%</td><td><span class="m ok">✅</span><sup>2, 3</sup></td></tr>
+      <tr><td>النقد والأوراق ذات الفائدة / القيمة السوقية</td><td>9%</td><td>أقل من 33%</td><td><span class="m ok">✅</span><sup>2, 3</sup></td></tr></table></div>
+      <h3>4. المصادر واتفاقها</h3>
+      <div class="scroll"><table><thead><tr><th>المصدر</th><th>الحكم</th><th>مقروء</th></tr></thead>
+      <tr><td>الفاحص أ، صفحة السهم</td><td>متوافق</td><td>نعم <sup>4</sup></td></tr>
+      <tr><td>الفاحص ب، صفحة السهم</td><td>متوافق، 92 من 100</td><td>نعم <sup>5</sup></td></tr>
+      <tr><td>المرجّح</td><td>متوافق، نوفمبر 2025</td><td>نعم <sup>6</sup></td></tr></table></div>
+      <p class="note" style="margin-top:8px">المصادر الثلاثة متفقة. التطهير: 1.9 مليون ÷ 98.4 مليون سهم = 0.0193 للسهم عن السنة المالية 2025 <span class="m ok">✅</span><sup>2</sup>. إعادة الفحص: 14 مايو 2026. شركة نموذجية.</p>
+      <div class="docfoot"><span>طيّب</span><a href="samples/ar/stock-quillmark.pdf">الحكم الكامل بصيغة PDF</a><span>صفحة 1 من 3</span></div>
+    </div>
+    <div class="en">
+      <div class="dochead"><b>Quillmark Industries: Tayyib verdict</b><span>Screened on 10 February 2026</span></div>
+      <span class="stamp">✅ CLEAN</span>
+      <h3>3. Ratios</h3>
+      <div class="scroll"><table><thead><tr><th>Ratio</th><th>Value</th><th>Threshold</th><th>Mark</th></tr></thead>
+      <tr><td>Non-compliant income / revenue</td><td>0.6%</td><td>below 5%</td><td><span class="m ok">✅</span><sup>2</sup></td></tr>
+      <tr><td>Debt / market capitalisation</td><td>18%</td><td>below 33%</td><td><span class="m ok">✅</span><sup>2, 3</sup></td></tr>
+      <tr><td>Cash and interest-bearing securities / market cap</td><td>9%</td><td>below 33%</td><td><span class="m ok">✅</span><sup>2, 3</sup></td></tr></table></div>
+      <h3>4. Sources and agreement</h3>
+      <div class="scroll"><table><thead><tr><th>Source</th><th>Verdict</th><th>Readable</th></tr></thead>
+      <tr><td>Screener A, ticker page</td><td>Compliant</td><td>yes <sup>4</sup></td></tr>
+      <tr><td>Screener B, ticker page</td><td>Compliant, 92 of 100</td><td>yes <sup>5</sup></td></tr>
+      <tr><td>Tiebreaker review</td><td>Compliant, November 2025</td><td>yes <sup>6</sup></td></tr></table></div>
+      <p class="note" style="margin-top:8px">The three sources agree. Purification: 1.9m / 98.4m shares = 0.0193 per share for FY2025 <span class="m ok">✅</span><sup>2</sup>. Re-screen: 14 May 2026. Sample company.</p>
+      <div class="docfoot"><span>Tayyib</span><a href="samples/en/stock-quillmark.pdf">Open the full verdict as a PDF</a><span>Page 1 of 3</span></div>
+    </div>
+  </article>
+</header>
+
+<section id="gate">
+  <div class="ar"><h2>البوابة، بالترتيب نفسه في كل مرة</h2><p class="lead">أكثر الأخطاء في الاستثمار الحلال ليست في المسائل الصعبة، بل في صندوق سندات داخل وعاء ادخاري لم يفحصه أحد، أو حساب ادخار اختير لسعره، أو شركة نظيفة والوظيفة في وحدتها الدفاعية، أو علامة خضراء من فاحص واحد أُخذت على الثقة. طيّب يجري الإجراء نفسه كل مرة ويكتب الوثيقة نفسها.</p></div>
+  <div class="en"><h2>The gate, in the same order every time</h2><p class="lead">Most mistakes in halal investing are not hard cases. They are a bond fund inside a tax wrapper nobody screened, a savings account chosen for its rate, a clean company whose job is in its defence unit, or a single screener's green tick taken on trust. Tayyib runs the same procedure every time and writes the same document.</p></div>
+  <ol class="gate">
+    <li class="ar"><div><b>النشاط الأساسي أولًا</b><span>البنوك التقليدية، التأمين، القمار، الخمر، السلاح، وما يخدمها. الإخفاق هنا إخفاق مهما كانت النسب. وللوظيفة: الوحدة والعمل نفسه، لا المجموعة فقط.</span></div><span>المصدر: تقرير الشركة السنوي وملاحظة القطاعات، وصفحة الوحدة، والوصف الوظيفي.</span></li>
+    <li class="en"><div><b>Core business first</b><span>Banking, insurance, gambling, alcohol, defence and whatever serves them. A fail here is a FAIL whatever the ratios. For a job, the unit and the work, not just the group.</span></div><span>Source: the annual report's segment note, the unit's page, the job description.</span></li>
+    <li class="ar"><div><b>النسب الثلاث</b><span>الدخل غير المتوافق أقل من 5% من الإيراد؛ الدين أقل من 33% من القيمة السوقية؛ النقد والأوراق ذات الفائدة أقل من 33%.</span></div><span>المصدر: القوائم المالية الأخيرة وبيانات السوق، مع ذكر الأساس المستخدم.</span></li>
+    <li class="en"><div><b>The three ratios</b><span>Non-compliant income below 5% of revenue; debt below 33% of market capitalisation; cash and interest-bearing securities below 33%.</span></div><span>Source: the latest filing and exchange data, with the basis stated.</span></li>
+    <li class="ar"><div><b>مصدران يجب أن يتفقا</b><span>صفحات الفاحصين تُجلب وتُؤرَّخ. الانقسام يعني «على الحد» في أحسن الأحوال. الصفحة التي لا تُقرأ «غير متحقق منها» ولا تُحتسب.</span></div><span>المصدر: الفاحصان الرئيسيان ومرجّح عند الاختلاف.</span></li>
+    <li class="en"><div><b>Two sources must agree</b><span>Screener pages are fetched and dated. A split is BORDERLINE at best. A page that cannot be read is "unverified" and does not count.</span></div><span>Source: the two primary screeners and a tiebreaker.</span></li>
+    <li class="ar"><div><b>حكم واحد في تخطيط ثابت</b><span>نظيف أو على الحد أو غير جائز، مع التعليل، وحساب التطهير، وتاريخ إعادة الفحص. فاحص آلي يرفض أي حكم يحيد عن التخطيط.</span></div><span>ثمانية أقسام مرقّمة، علامة على كل حقيقة، ومصادر مرقّمة في النهاية.</span></li>
+    <li class="en"><div><b>One verdict in a fixed layout</b><span>CLEAN, BORDERLINE or FAIL, with the reasoning, the purification arithmetic and a re-screen date. A checker fails any verdict that drifts from the layout.</span></div><span>Eight numbered sections, a mark on every fact, footnoted sources at the end.</span></li>
+  </ol>
+  <div class="verdicts">
+    <div class="ar"><b>✅ نظيف</b><p>اجتاز النشاط الأساسي والنسب الثلاث، ومصدران مستقلان متفقان على صفحات قُرئت اليوم.</p></div>
+    <div class="en"><b>✅ CLEAN</b><p>Passes core business and the three ratios, and two independent sources agree on pages read today.</p></div>
+    <div class="ar"><b>🟡 على الحد</b><p>يعني على الحد. مصدر منقسم أو غير متحقق منه، أو نسبة قريبة من حدها، أو صندوق بلا سياسة تطهير. الحكم يسمّي ما يحسم الأمر.</p></div>
+    <div class="en"><b>🟡 BORDERLINE</b><p>Means borderline. A split or unverified source, a ratio near its limit, a fund with no purification policy. The verdict names what resolves it.</p></div>
+    <div class="ar"><b>❌ غير جائز</b><p>إخفاق في النشاط الأساسي أو نسبة تجاوزت حدها. لا يُليَّن لأجل عائد أو راتب أو سهولة.</p></div>
+    <div class="en"><b>❌ FAIL</b><p>A core-business fail or a ratio over its limit. Never softened for yield, pay or convenience.</p></div>
+  </div>
+</section>
+
+<section id="types">
+  <div class="ar"><h2>ما يُفحص</h2></div><div class="en"><h2>What it screens</h2></div>
+  <div class="types">
+    <div class="ar"><h3>الأسهم</h3><p>النشاط الأساسي ثم النسب الثلاث ثم اتفاق فاحصين. نسبة دخل الفائدة تُذكر حتى عند الاجتياز.</p></div>
+    <div class="en"><h3>Stocks</h3><p>Core business, then the three ratios, then two screeners agreeing. The interest-income percentage is reported even when it passes.</p></div>
+    <div class="ar"><h3>الصناديق</h3><p>نظيف فقط لصندوق يتتبع مؤشرًا أو منهجية شرعية مذكورة في وثائقه مع هيئة رقابة. صندوق يحمل سندات: غير جائز.</p></div>
+    <div class="en"><h3>Funds</h3><p>CLEAN only for a fund screened to a named Shariah index or methodology with a Shariah board. Any fund holding bonds is a FAIL.</p></div>
+    <div class="ar"><h3>النقد والادخار</h3><p>الفائدة التقليدية ربا. جوائز السحب ربا وميسر. النظيف: منتجات البنوك الإسلامية بمعدل ربح متوقع تحت هيئة شرعية.</p></div>
+    <div class="en"><h3>Cash and savings</h3><p>Conventional interest is riba. Prize-draw savings are riba and gambling. CLEAN: Islamic-bank products on an expected-profit basis under a Shariah board.</p></div>
+    <div class="ar"><h3>الأوعية: حسابات الادخار المعفاة والمعاشات</h3><p>الوعاء محايد؛ يُفحص كل ما بداخله. الصندوق الافتراضي للمعاش غالبًا تقليدي وغير جائز حتى يُغيَّر.</p></div>
+    <div class="en"><h3>Wrappers: ISAs and pensions</h3><p>The wrapper is neutral; every holding inside it is screened. A default pension fund is usually conventional and a FAIL until changed.</p></div>
+    <div class="ar"><h3>جهات العمل والعملاء</h3><p>اختبار النشاط الأساسي على الشركة ثم على الوحدة والعمل نفسه. وحدة الدفاع أو الإقراض في شركة نظيفة: غير جائز لمن يعمل فيها.</p></div>
+    <div class="en"><h3>Employers and clients</h3><p>Core-business test on the company, then on the unit and the work itself. A clean company's defence or lending unit is a FAIL for a role in it.</p></div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="ar"><h2>كيف يبدو الحكم الكامل</h2><p class="lead">أربعة أحكام نموذجية، واحد لكل نوع ولكل نتيجة، بالعربية والإنجليزية، كلها على التخطيط الثابت الذي تفرضه المهارة. الشركات نماذج والأرقام توضيحية.</p></div>
+  <div class="en"><h2>What a full verdict looks like</h2><p class="lead">Four sample verdicts, one per product type and one per outcome, in Arabic and English, each to the fixed layout the skill enforces. The companies are samples and the figures are illustrative.</p></div>
+  <div class="tabs" role="tablist" data-group="s">
+    <button role="tab" aria-selected="true" data-v="stock"><span class="ar">سهم: نظيف</span><span class="en">Stock: CLEAN</span></button>
+    <button role="tab" aria-selected="false" data-v="fund"><span class="ar">صندوق: على الحد</span><span class="en">Fund: BORDERLINE</span></button>
+    <button role="tab" aria-selected="false" data-v="cash"><span class="ar">ادخار: غير جائز</span><span class="en">Savings: FAIL</span></button>
+    <button role="tab" aria-selected="false" data-v="job"><span class="ar">وظيفة: غير جائز</span><span class="en">Job: FAIL</span></button>
+  </div>
+  <div class="view on" id="s-stock"><article class="sheet">
+    <div class="ar"><div class="dochead"><b>Quillmark Industries: حكم طيّب</b><span>تاريخ الفحص: 10 فبراير 2026</span></div><p><b>1. الحكم في فقرة واحدة.</b> تصنع Quillmark عبوات ورقية وأليافًا مقولبة للأغذية والسلع الاستهلاكية، ولا نشاط مستبعدًا لديها <span class="m ok">✅</span><sup>1</sup>. دخل الفائدة 0.6% من الإيراد، والدين 18% من القيمة السوقية، والنقد 9%، وكلها داخل الحدود <span class="m ok">✅</span><sup>2, 3</sup>. الفاحصان الرئيسيان يصنفانها متوافقة على صفحات قُرئت اليوم، والمرجّح يوافق <span class="m ok">✅</span><sup>4, 5, 6</sup>. يتغير الحكم إذا تجاوز الدين ثلث القيمة السوقية، وهو ما يسببه هبوط السهم 45% وحده <span class="m inf">🟡</span>، لأن نسبة الدين هي الأقرب إلى حدها.</p><div class="docfoot"><span>طيّب</span><a href="samples/ar/stock-quillmark.pdf">الحكم الكامل بصيغة PDF</a><span>صفحة 1 من 3</span></div></div>
+    <div class="en"><div class="dochead"><b>Quillmark Industries: Tayyib verdict</b><span>Screened on 10 February 2026</span></div><p><b>1. The verdict in one paragraph.</b> Quillmark makes paper and moulded-fibre packaging for food and consumer goods, with no excluded line of business <span class="m ok">✅</span><sup>1</sup>. Interest income is 0.6% of revenue, debt 18% of market capitalisation and cash 9%, all inside the thresholds <span class="m ok">✅</span><sup>2, 3</sup>. Both primary screeners mark it compliant on pages read today, and the tiebreaker agrees <span class="m ok">✅</span><sup>4, 5, 6</sup>. The verdict changes if debt rises above a third of market capitalisation, which a 45% fall in the share price alone would cause <span class="m inf">🟡</span>, because the debt ratio is the nearest to its threshold.</p><div class="docfoot"><span>Tayyib</span><a href="samples/en/stock-quillmark.pdf">Open the full verdict as a PDF</a><span>Page 1 of 3</span></div></div>
+  </article></div>
+  <div class="view" id="s-fund"><article class="sheet">
+    <div class="ar"><div class="dochead"><b>Sabrwell Global Equity Index Fund: حكم طيّب</b><span>تاريخ الفحص: 10 فبراير 2026</span></div><p><b>1. الحكم في فقرة واحدة.</b> يتتبع الصندوق مؤشرًا عالميًا للأسهم مفحوصًا شرعيًا بمنهجية منشورة وهيئة رقابة لدى مزوّد المؤشر <span class="m ok">✅</span><sup>1, 2</sup>. مكوناته تجتاز فحص المؤشر ولا يحمل سندات ولا أدوات سوق نقد للعائد <span class="m ok">✅</span><sup>3</sup>. وهو على الحد لا نظيف لسببين: الفاحصان الرئيسيان منقسمان، أحدهما متوافق والآخر «غير مشمول»، والصندوق لا ينشر سياسة تطهير ولا رقمًا له <span class="m inf">🟡</span>، لأن المعيار يوجب التطهير وصندوقًا لا يعين عليه لم يُتمّ عمله. نشر نسبة تطهير يجعله نظيفًا.</p><div class="docfoot"><span>طيّب</span><a href="samples/ar/fund-sabrwell.pdf">الحكم الكامل بصيغة PDF</a><span>صفحة 1 من 3</span></div></div>
+    <div class="en"><div class="dochead"><b>Sabrwell Global Equity Index Fund: Tayyib verdict</b><span>Screened on 10 February 2026</span></div><p><b>1. The verdict in one paragraph.</b> The fund tracks a named Shariah-screened global equity index with a published methodology and an index-provider Shariah board <span class="m ok">✅</span><sup>1, 2</sup>. Its holdings pass on the index's screen, and the fund holds no bonds or money-market instruments for yield <span class="m ok">✅</span><sup>3</sup>. It is BORDERLINE rather than CLEAN for two reasons: the two primary screeners split, one compliant and one "not screened", and the fund publishes no purification policy or figure <span class="m inf">🟡</span>, because the standard requires purification and a fund that does not help with it has not finished its job. A published purification ratio would make it CLEAN.</p><div class="docfoot"><span>Tayyib</span><a href="samples/en/fund-sabrwell.pdf">Open the full verdict as a PDF</a><span>Page 1 of 3</span></div></div>
+  </article></div>
+  <div class="view" id="s-cash"><article class="sheet">
+    <div class="ar"><div class="dochead"><b>Fennbridge Bank Easy Saver: حكم طيّب</b><span>تاريخ الفحص: 10 فبراير 2026</span></div><p><b>1. الحكم في فقرة واحدة.</b> يدفع الحساب فائدة 4.1% سنويًا على ميزانية بنك تقليدي، وهذا ربا، فيخفق في اختبار النشاط الأساسي ولا تنقذه نسبة <span class="m ok">✅</span><sup>1, 2</sup>. الحكم نفسه لكل حساب فائدة تقليدي مهما كان السعر، ولا يتوقف على الفاحصين وهما متفقان <span class="m ok">✅</span><sup>3, 4</sup>. البديل حساب بمعدل ربح متوقع في بنك إسلامي تحت هيئة شرعية، ويسمّيه الحكم في القسم الخامس.</p><div class="docfoot"><span>طيّب</span><a href="samples/ar/cash-fennbridge.pdf">الحكم الكامل بصيغة PDF</a><span>صفحة 1 من 2</span></div></div>
+    <div class="en"><div class="dochead"><b>Fennbridge Bank Easy Saver: Tayyib verdict</b><span>Screened on 10 February 2026</span></div><p><b>1. The verdict in one paragraph.</b> The account pays interest at 4.1% AER on a conventional banking balance sheet, which is riba, so it fails the core-business test and no ratio can rescue it <span class="m ok">✅</span><sup>1, 2</sup>. The verdict is the same for every conventional interest-bearing account regardless of rate, and it does not depend on the screeners, who agree <span class="m ok">✅</span><sup>3, 4</sup>. The alternative is an expected-profit-rate account at an Islamic bank under a Shariah board, which the verdict names in section 5.</p><div class="docfoot"><span>Tayyib</span><a href="samples/en/cash-fennbridge.pdf">Open the full verdict as a PDF</a><span>Page 1 of 2</span></div></div>
+  </article></div>
+  <div class="view" id="s-job"><article class="sheet">
+    <div class="ar"><div class="dochead"><b>Orrinbridge Analytics، وظيفة في وحدة برامج الدفاع: حكم طيّب</b><span>تاريخ الفحص: 10 فبراير 2026</span></div><p><b>1. الحكم في فقرة واحدة.</b> Orrinbridge شركة استشارات تحليل بيانات، 71% من إيراد المجموعة أعمال تجارية وحكومية و29% دفاع، فلا تجتاز المجموعة اختبار النشاط الأساسي على قاعدة 5% إلا إن عُدّ الدفاع عرضيًا، وهو عند 29% ليس كذلك <span class="m inf">🟡</span>. أما الوظيفة فتقع في وحدة برامج الدفاع، والوصف الوظيفي يسمّي تحليلات منظومات الأسلحة عملًا لها <span class="m ok">✅</span><sup>1, 2</sup>. الوظيفة في وحدة مستبعدة تخفق مهما كانت المجموعة، فالحكم غير جائز <span class="m ok">✅</span><sup>3</sup>. وظيفة في وحدة التحليلات التجارية تُفحص على حدة وقد تجتاز.</p><div class="docfoot"><span>طيّب</span><a href="samples/ar/employer-orrinbridge.pdf">الحكم الكامل بصيغة PDF</a><span>صفحة 1 من 2</span></div></div>
+    <div class="en"><div class="dochead"><b>Orrinbridge Analytics, Defence Programmes role: Tayyib verdict</b><span>Screened on 10 February 2026</span></div><p><b>1. The verdict in one paragraph.</b> Orrinbridge is a data-analytics consultancy whose group revenue is 71% commercial and public-sector work and 29% defence, so the group passes the core-business test only if defence is read as incidental, which at 29% it is not <span class="m inf">🟡</span>. The role sits in the Defence Programmes unit and the job description names weapons-systems analytics as the work <span class="m ok">✅</span><sup>1, 2</sup>. A role in an excluded unit fails regardless of the group, so the verdict is FAIL <span class="m ok">✅</span><sup>3</sup>. A role in the commercial analytics unit would be screened separately and might pass.</p><div class="docfoot"><span>Tayyib</span><a href="samples/en/employer-orrinbridge.pdf">Open the full verdict as a PDF</a><span>Page 1 of 2</span></div></div>
+  </article></div>
+</section>
+
+<section id="install">
+  <div class="ar"><h2>ثبّته في وكيلك</h2><p class="lead">اختر وكيلك. دقيقتان، بلا حساب.</p></div>
+  <div class="en"><h2>Install it in your agent</h2><p class="lead">Pick your agent. Two minutes, no account.</p></div>
+  <div class="tabs" role="tablist" data-group="i">
+    <button role="tab" aria-selected="true" data-v="claude">Claude Code</button><button role="tab" aria-selected="false" data-v="codex">Codex</button><button role="tab" aria-selected="false" data-v="cursor">Cursor</button><button role="tab" aria-selected="false" data-v="copilot">GitHub Copilot</button><button role="tab" aria-selected="false" data-v="other"><span class="ar">وكلاء آخرون</span><span class="en">Other agents</span></button>
+  </div>
+  <div class="install">
+    <div>
+      <div class="view on" id="i-claude"><p class="ar">سطر واحد، كإضافة. ثم تستجيب المهارة لـ <code>/tayyib</code>.</p><p class="en">One line, as a plugin. The skill then answers to <code>/tayyib</code>.</p><pre><code>/plugin install tayyib --marketplace me2resh/tayyib</code></pre><p class="note ar" style="margin-top:12px">الإصدارات الأقدم: <code>/plugin marketplace add me2resh/tayyib</code> ثم <code>/plugin install tayyib@tayyib</code>. من الطرفية: <code>claude plugin install tayyib --marketplace me2resh/tayyib</code>.</p><p class="note en" style="margin-top:12px">Older versions: <code>/plugin marketplace add me2resh/tayyib</code>, then <code>/plugin install tayyib@tayyib</code>. From a shell: <code>claude plugin install tayyib --marketplace me2resh/tayyib</code>.</p></div>
+      <div class="view" id="i-codex"><p class="ar">يقرأ Codex المهارات من <code>~/.codex/skills</code>. المثبّت ينسخ المجلد إليه.</p><p class="en">Codex reads skills from <code>~/.codex/skills</code>. The installer copies the folder there.</p><pre><code>git clone https://github.com/me2resh/tayyib
+cd tayyib
+./install.sh codex</code></pre></div>
+      <div class="view" id="i-cursor"><p class="ar">يستخدم Cursor قواعد المشروع. انسخ ملف القاعدة ومجلد المهارة إلى مشروعك.</p><p class="en">Cursor uses project rules. Copy the rule file and the skill folder into your project.</p><pre><code>git clone https://github.com/me2resh/tayyib
+mkdir -p .cursor/rules
+cp tayyib/.cursor/rules/tayyib.mdc .cursor/rules/
+cp -R tayyib/skills/tayyib .cursor/</code></pre></div>
+      <div class="view" id="i-copilot"><p class="ar">يقرأ Copilot تعليمات المستودع. انسخ ملف التعليمات ومجلد المهارة.</p><p class="en">Copilot reads repository instructions. Copy the instructions file and the skill folder.</p><pre><code>git clone https://github.com/me2resh/tayyib
+mkdir -p .github
+cp tayyib/.github/copilot-instructions.md .github/
+cp -R tayyib/skills/tayyib .github/</code></pre></div>
+      <div class="view" id="i-other"><p class="ar">أي وكيل يقرأ مجلدًا فيه <code>SKILL.md</code> أو ملف تعليمات واحدًا.</p><p class="en">Any agent that reads a folder with a <code>SKILL.md</code>, or a plain instructions file.</p><pre><code>git clone https://github.com/me2resh/tayyib
+cd tayyib
+./install.sh /path/to/your/agent/skills</code></pre></div>
+    </div>
+    <div>
+      <p class="lead ar">ثم اسأل كما تسأل زميلًا.</p><p class="lead en">Then ask the way you would ask a colleague.</p>
+      <ul class="ask">
+        <li class="ar">هل سهم Acme حلال؟</li><li class="en">Is Acme halal?</li>
+        <li class="ar">افحص هذا الصندوق قبل أن أضعه في حساب الادخار المعفى.</li><li class="en">Screen this fund before I put it in my ISA.</li>
+        <li class="ar">هل أقبل هذه الوظيفة؟ الشركة نظيفة لكن الدور في وحدة الإقراض.</li><li class="en">Can I take this role? The company is clean but the job is in the lending unit.</li>
+        <li class="ar">كم التطهير المستحق على 500 سهم احتفظت بها طوال السنة؟</li><li class="en">Purification owed on 500 shares held all year.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="rules">
+  <div class="ar"><h2>خمسة أشياء لن تفعلها</h2></div><div class="en"><h2>Five things it will not do</h2></div>
+  <ul class="rules">
+    <li class="ar"><b>تليين حكم لأجل العائد أو الراتب.</b><span>الأجر والعائد والسهولة والاستعجال لا تدخل في الحكم. الفحص يقدم الدليل والقرار للشخص.</span></li>
+    <li class="en"><b>Soften a verdict for yield or pay.</b><span>Pay, yield, convenience and urgency never enter the verdict. The screen gives evidence; the person decides.</span></li>
+    <li class="ar"><b>قبول علامة فاحص واحد.</b><span>مصدران مستقلان يجب أن يتفقا. الانقسام على الحد في أحسن الأحوال، مع تسمية النسبة المخفقة.</span></li>
+    <li class="en"><b>Take one screener's tick.</b><span>Two independent sources must agree. A split is BORDERLINE at best, with the failing ratio named.</span></li>
+    <li class="ar"><b>تحويل «غير متحقق منه» إلى «نظيف».</b><span>صفحة لا تُقرأ، أو منهجية صندوق غير مذكورة، أو منتج لا يُصنَّف: الجواب على الحد مع السبب.</span></li>
+    <li class="en"><b>Turn unverified into clean.</b><span>A page that cannot be read, a fund with no stated methodology, a product that cannot be classified: the answer is BORDERLINE with the reason.</span></li>
+    <li class="ar"><b>ترك حكم بلا تاريخ.</b><span>النسب تتحرك مع السعر ومع كل قوائم فصلية. كل حكم يحمل تاريخ إعادة فحص أو محفّزًا، والحكم الأقدم من تاريخه ليس حكمًا.</span></li>
+    <li class="en"><b>Leave a verdict undated.</b><span>Ratios move with price and with each quarterly filing. Every verdict carries a re-screen date or trigger, and a verdict older than its date is not a verdict.</span></li>
+    <li class="ar"><b>تسجيل ما يملكه الشخص.</b><span>الحكم عن المنتج لا عن الشخص. لا أرصدة ولا حيازات ولا جهة عمل في ملفات المهارة.</span></li>
+    <li class="en"><b>Record what the person holds.</b><span>A verdict is about the product, not the person. No balances, holdings or employer in the skill's files.</span></li>
+  </ul>
+</section>
+
+<footer>
+  <p class="ar">طيّب مرخّص بترخيص MIT. <a href="https://github.com/me2resh/tayyib">المصدر على GitHub</a>. الشركات في هذه الصفحة نماذج. طيّب يقدم دليلًا وفق معيار، وليس فتوى؛ القرار ومسائل الاجتهاد للشخص وعالمه.</p>
+  <p class="en">Tayyib is MIT licensed. <a href="https://github.com/me2resh/tayyib">Source on GitHub</a>. The companies on this page are samples. Tayyib gives evidence to a standard; it is not a fatwa, and the decision and any question of scholarship are the person's own.</p>
+</footer>
+</div>
+<script>
+(function(){
+  var html=document.documentElement,btn=document.getElementById('lang');
+  function setLang(l){html.setAttribute('lang',l);html.setAttribute('dir',l==='ar'?'rtl':'ltr');document.title=l==='ar'?'طيّب':'Tayyib';try{localStorage.setItem('tayyib-lang',l)}catch(e){}}
+  var saved=null;try{saved=localStorage.getItem('tayyib-lang')}catch(e){}
+  if(saved==='en'||saved==='ar')setLang(saved);
+  btn.addEventListener('click',function(){setLang(html.getAttribute('lang')==='ar'?'en':'ar')});
+  document.querySelectorAll('.tabs').forEach(function(t){var g=t.dataset.group;t.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){
+    t.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-selected','false')});
+    document.querySelectorAll('[id^="'+g+'-"].view').forEach(function(v){v.classList.remove('on')});
+    b.setAttribute('aria-selected','true');document.getElementById(g+'-'+b.dataset.v).classList.add('on');
+  });});});
+})();
+</script>
+</body>
+</html>
