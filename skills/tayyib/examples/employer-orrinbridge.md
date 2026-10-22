@@ -2,7 +2,6 @@
 tayyib: 1
 name: Orrinbridge Analytics, Senior Engineer in the Defence Programmes unit
 type: employer
-language: en
 screened: 2026-02-10
 verdict: FAIL
 sources_read: 2

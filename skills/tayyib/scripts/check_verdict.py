@@ -4,8 +4,7 @@ Usage: python3 check_verdict.py <verdict.md>"""
 import re, sys, pathlib
 
 EN = ["The verdict in one paragraph", "Core business", "Ratios", "Sources and agreement", "Reasoning", "Purification", "Re-screen", "Sources"]
-AR = ["الحكم في فقرة واحدة", "النشاط الأساسي", "النسب المالية", "المصادر واتفاقها", "التعليل", "التطهير", "إعادة الفحص", "المصادر"]
-VERDICT_WORD = {"CLEAN": ("CLEAN", "نظيف"), "BORDERLINE": ("BORDERLINE", "على الحد"), "FAIL": ("FAIL", "غير جائز")}
+VERDICT_WORD = {"CLEAN": "CLEAN", "BORDERLINE": "BORDERLINE", "FAIL": "FAIL"}
 
 def check_block(block, idx, fails, warns):
     m = re.match(r"^---\n(.*?)\n---\n(.*)$", block, re.S)
@@ -14,20 +13,19 @@ def check_block(block, idx, fails, warns):
     fm = dict(l.split(":", 1) for l in m.group(1).splitlines() if ":" in l)
     fm = {k.strip(): v.strip() for k, v in fm.items()}
     body = m.group(2)
-    for k in ["tayyib", "name", "type", "language", "screened", "verdict", "sources_read", "sources_agree", "rescreen"]:
+    for k in ["tayyib", "name", "type", "screened", "verdict", "sources_read", "sources_agree", "rescreen"]:
         if k not in fm: fails.append(f"block {idx}: front block missing '{k}'")
-    lang = fm.get("language"); verdict = fm.get("verdict")
-    if lang not in ("ar", "en"): fails.append(f"block {idx}: language must be ar or en")
+    verdict = fm.get("verdict")
     if verdict not in VERDICT_WORD: fails.append(f"block {idx}: verdict must be CLEAN, BORDERLINE or FAIL")
     if fm.get("type") not in ("stock", "fund", "cash", "wrapper", "employer", "other"): fails.append(f"block {idx}: type not recognised")
     if not re.match(r"\d{4}-\d{2}-\d{2}$", fm.get("screened", "")): fails.append(f"block {idx}: screened must be YYYY-MM-DD")
     # header verdict line
-    want = VERDICT_WORD.get(verdict, ("", ""))[0 if lang == "en" else 1]
+    want = VERDICT_WORD.get(verdict, "")
     head = "\n".join(body.splitlines()[:6])
     if want and want not in head: fails.append(f"block {idx}: header verdict line does not say {want}")
     # sections
     heads = [re.sub(r"^##\s*", "", l).strip() for l in body.splitlines() if re.match(r"^## ", l)]
-    names = EN if lang == "en" else AR
+    names = EN
     pos = -1
     for n, w in enumerate(names, 1):
         found = [i for i, h in enumerate(heads) if re.match(rf"^{n}\.\s*{re.escape(w)}\s*$", h)]
@@ -42,17 +40,17 @@ def check_block(block, idx, fails, warns):
     in_src = False
     for i, l in enumerate(body.splitlines(), 1):
         if re.match(r"^## 8\.", l): in_src = True
-        if in_src or l.startswith("#") or not l.strip() or l.startswith("Verdict:") or l.startswith("الحكم:"): continue
+        if in_src or l.startswith("#") or not l.strip() or l.startswith("Verdict:"): continue
         for mm in re.finditer("✅", l):
             if not re.search(r"\[\^\d+\]|\]\(https?://", l[mm.end():mm.end() + 160]): fails.append(f"block {idx} line {i}: ✅ without a footnote or link after it")
     # sources table readability count and agreement
     sec4 = re.search(r"^## 4\..*?(?=^## 5\.)", body, re.S | re.M)
     readable = 0
     if sec4:
-        rows = [l for l in sec4.group(0).splitlines() if l.startswith("|") and not l.startswith("|--") and not re.match(r"^\|\s*(Source|المصدر)\s*\|", l)]
+        rows = [l for l in sec4.group(0).splitlines() if l.startswith("|") and not l.startswith("|--") and not re.match(r"^\|\s*Source\s*\|", l)]
         for r in rows:
             cells = [c.strip() for c in r.strip("|").split("|")]
-            if len(cells) >= 4 and re.search(r"^(yes|نعم)$", cells[3], re.I): readable += 1
+            if len(cells) >= 4 and re.search(r"^yes$", cells[3], re.I): readable += 1
     try:
         if int(fm.get("sources_read", "-1")) != readable: fails.append(f"block {idx}: sources_read is {fm.get('sources_read')} but {readable} rows are marked readable")
     except ValueError: fails.append(f"block {idx}: sources_read must be a number")

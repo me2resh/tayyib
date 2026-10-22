@@ -2,7 +2,6 @@
 tayyib: 1
 name: Fennbridge Bank Easy Saver, 4.1% AER variable
 type: cash
-language: en
 screened: 2026-02-10
 verdict: FAIL
 sources_read: 2

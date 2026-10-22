@@ -1,6 +1,6 @@
 # Tayyib (طيّب)
 
-**A hard halal gate for everything money touches.** Stocks, funds, cash products, the holdings inside an ISA or pension, and employers or clients. One verdict to the AAOIFI standard, the ratios behind it, two independent sources that must agree, the purification owed, and the date to check again. Arabic by default, English on request.
+**A hard halal gate for everything money touches.** Stocks, funds, cash products, the holdings inside an ISA or pension, and employers or clients. One verdict to the AAOIFI standard, the ratios behind it, two independent sources that must agree, the purification owed, and the date to check again.
 
 Site: https://me2resh.github.io/tayyib/
 
@@ -26,11 +26,11 @@ Older Claude Code: `/plugin marketplace add me2resh/tayyib`, then `/plugin insta
 
 Codex and other Agent-Skills agents: clone and run `./install.sh codex` or `./install.sh /path/to/skills`. Cursor: copy `.cursor/rules/tayyib.mdc`. Copilot: copy `.github/copilot-instructions.md`.
 
-Then ask, in Arabic or English: "Is Acme halal?", "Screen this fund before I put it in my ISA", "Can I take this role?", "Purification owed on 500 shares held all year".
+Then ask: "Is Acme halal?", "Screen this fund before I put it in my ISA", "Can I take this role?", "Purification owed on 500 shares held all year".
 
 ## The output is deterministic
 
-Every verdict has a language-neutral front block (type, date, verdict, sources read, agreement, re-screen), a fixed header, eight numbered sections in a fixed order with fixed names in Arabic and in English, fixed table columns, a mark on every fact, and footnoted sources. `skills/tayyib/references/outputs.md` is the specification; `skills/tayyib/scripts/check_verdict.py` enforces it and the skill runs it before finishing. The eight sample verdicts (four in Arabic, four in English) pass it.
+Every verdict has a machine-readable front block (type, date, verdict, sources read, agreement, re-screen), a fixed header, eight numbered sections in a fixed order with fixed names, fixed table columns, a mark on every fact, and footnoted sources. `skills/tayyib/references/outputs.md` is the specification; `skills/tayyib/scripts/check_verdict.py` enforces it and the skill runs it before finishing. The four sample verdicts pass it.
 
 ## Rules the skill enforces
 
@@ -47,9 +47,9 @@ Every verdict has a language-neutral front block (type, date, verdict, sources r
 skills/tayyib/SKILL.md               the skill (Agent Skills format)
 skills/tayyib/references/standard.md the gate: exclusions, ratios, per-type screens, purification
 skills/tayyib/references/sources.md  screeners, filings, procedure
-skills/tayyib/references/outputs.md  the fixed verdict layout, Arabic and English
+skills/tayyib/references/outputs.md  the fixed verdict layout
 skills/tayyib/scripts/check_verdict.py
-skills/tayyib/examples/ar, en        eight sample verdicts
+skills/tayyib/examples/              four sample verdicts
 docs/                                the website and sample PDFs
 install.sh
 ```

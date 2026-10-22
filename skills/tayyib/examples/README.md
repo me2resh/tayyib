@@ -1,6 +1,6 @@
 # Sample verdicts
 
-Four verdicts, one per product type and one per outcome, in Arabic (`ar/`, the default) and English (`en/`). The companies are samples (the names were checked against the web when written), the figures are illustrative and the links point at example.org; the method, the layout and the marks are as shipped. Every file passes `scripts/check_verdict.py`.
+Four verdicts, one per product type and one per outcome,. The companies are samples (the names were checked against the web when written), the figures are illustrative and the links point at example.org; the method, the layout and the marks are as shipped. Every file passes `scripts/check_verdict.py`.
 
 | Type | File | Outcome | What it shows |
 |---|---|---|---|

@@ -3,4 +3,4 @@ description: Tayyib, a hard halal gate to the AAOIFI standard for stocks, funds,
 alwaysApply: false
 ---
 
-Follow `skills/tayyib/SKILL.md` and its `references/`: core-business test first, then the three ratios, then two independent screeners that must agree. Write the verdict to the fixed layout in `references/outputs.md` (front block, eight numbered sections, marks ✅ 🟡 ❔ on every fact, footnoted sources) and run `scripts/check_verdict.py` before finishing. Arabic by default; English when asked in English. Never soften a FAIL; a missing source makes a verdict BORDERLINE, never CLEAN.
+Follow `skills/tayyib/SKILL.md` and its `references/`: core-business test first, then the three ratios, then two independent screeners that must agree. Write the verdict to the fixed layout in `references/outputs.md` (front block, eight numbered sections, marks ✅ 🟡 ❔ on every fact, footnoted sources) and run `scripts/check_verdict.py` before finishing. Never soften a FAIL; a missing source makes a verdict BORDERLINE, never CLEAN.

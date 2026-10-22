@@ -2,7 +2,6 @@
 tayyib: 1
 name: Sabrwell Global Equity Index Fund (accumulation units)
 type: fund
-language: en
 screened: 2026-02-10
 verdict: BORDERLINE
 sources_read: 2

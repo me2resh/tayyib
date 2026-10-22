@@ -2,7 +2,6 @@
 tayyib: 1
 name: Quillmark Industries (QLM), a listed packaging manufacturer
 type: stock
-language: en
 screened: 2026-02-10
 verdict: CLEAN
 sources_read: 3

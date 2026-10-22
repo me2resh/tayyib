@@ -25,9 +25,10 @@ li{margin:2pt 0}sup{font-size:7pt;color:#b4761a;font-family:Arial,sans-serif;mar
 .fm{font-family:ui-monospace,Menlo,monospace;font-size:8pt;color:#5a6a63;background:#eef1ee;padding:6pt 8pt;border-radius:4px;direction:ltr;text-align:left;white-space:pre-wrap;margin:0 0 10pt}
 .end{font-size:8.5pt;color:#5a6a63;border-top:1px solid #d5dcd7;margin-top:18pt;padding-top:6pt}ul{padding-inline-start:16pt}li b{color:#b4761a}'''
 tmp = pathlib.Path(os.environ.get("TMPDIR", "/tmp")) / "tayyib-samples"; tmp.mkdir(exist_ok=True)
-for lang in ("ar", "en"):
-    out = ROOT / "docs" / "samples" / lang; out.mkdir(parents=True, exist_ok=True)
-    for md in sorted(glob.glob(str(ROOT / f"skills/tayyib/examples/{lang}/*.md"))):
+for lang in ("en",):
+    out = ROOT / "docs" / "samples"; out.mkdir(parents=True, exist_ok=True)
+    for md in sorted(glob.glob(str(ROOT / "skills/tayyib/examples/*.md"))):
+        if md.endswith("README.md"): continue
         text = pathlib.Path(md).read_text()
         m = re.match(r"^---\n(.*?)\n---\n(.*)$", text, re.S)
         front, body = (m.group(1), m.group(2)) if m else ("", text)

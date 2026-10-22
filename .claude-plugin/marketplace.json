@@ -6,8 +6,8 @@
     {
       "name": "tayyib",
       "source": ".",
-      "description": "Halal screening to the AAOIFI standard for stocks, funds, cash products, wrappers and employers. One verdict, two agreeing sources, purification, re-screen date. Arabic by default.",
-      "version": "1.0.0",
+      "description": "Halal screening to the AAOIFI standard for stocks, funds, cash products, wrappers and employers. One verdict, two agreeing sources, purification, re-screen date.",
+      "version": "1.1.0",
       "category": "finance"
     }
   ]

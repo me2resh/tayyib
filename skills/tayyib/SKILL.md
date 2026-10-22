@@ -1,6 +1,6 @@
 ---
 name: tayyib
-description: Halal screening as a hard gate for any financial product or employer, to the AAOIFI standard, with one verdict (CLEAN, BORDERLINE or FAIL), the ratios, two independent sources that must agree, the purification amount and a re-screen date. Use it before recommending, buying, holding or taking any stock, ETF or fund, savings or cash product, ISA or pension holding, or a job or client. Trigger on "is X halal", "halal stock", "shariah compliant", "can I invest in", "is this fund ok", "purification", "AAOIFI", "riba", "halal job", "should I take this role", and on any request to recommend a financial product or employer even when halal is not mentioned, because the gate runs first. Arabic is the default output language; English when the request is in English or asks for it.
+description: Halal screening as a hard gate for any financial product or employer, to the AAOIFI standard, with one verdict (CLEAN, BORDERLINE or FAIL), the ratios, two independent sources that must agree, the purification amount and a re-screen date. Use it before recommending, buying, holding or taking any stock, ETF or fund, savings or cash product, ISA or pension holding, or a job or client. Trigger on "is X halal", "halal stock", "shariah compliant", "can I invest in", "is this fund ok", "purification", "AAOIFI", "riba", "halal job", "should I take this role", and on any request to recommend a financial product or employer even when halal is not mentioned, because the gate runs first.
 tools: Read, Grep, Glob, Bash, WebSearch, WebFetch
 keywords: [halal, shariah, AAOIFI, screening, stocks, ETF, funds, savings, riba, purification, employer, job, Islamic finance]
 ---
@@ -21,7 +21,6 @@ Most mistakes in halal investing are not about hard cases. They are a bond fund 
 - **BORDERLINE means BORDERLINE.** It is never "mostly clean". The verdict says the exact concern and what would resolve it.
 - **Ratings drift.** Ratios move with price and with each quarterly filing. Every verdict carries a re-screen date or trigger, and a verdict older than its re-screen date is not a verdict.
 - **Fail safe.** When sources cannot be read, when the product cannot be classified, or when the methodology of a fund is not stated, the answer is BORDERLINE with the reason, not CLEAN with a caveat.
-- **Language.** Write the verdict in Arabic by default. Write it in English when the request is in English or asks for English. The front block and the layout are the same in both; `references/outputs.md` gives both heading sets.
 - **Privacy.** Never record a person's holdings, balances or employer in the skill's own files; a verdict is about the product, not the person.
 
 ## Step 0: classify
@@ -38,7 +37,7 @@ Decide the product type before anything else, because the screen differs: `stock
 
 ## Step 3: write the verdict, to the fixed layout
 
-`references/outputs.md` is the specification: a language-neutral front block, a fixed header, numbered sections in a fixed order with fixed names in Arabic and English, fixed table columns, and a sources section the verdict can be rebuilt from. Run `python3 scripts/check_verdict.py <file.md>` before finishing and fix every failure. For a batch, one file or one block per name, in the order given, each passing the checker.
+`references/outputs.md` is the specification: a machine-readable front block, a fixed header, numbered sections in a fixed order with fixed names, fixed table columns, and a sources section the verdict can be rebuilt from. Run `python3 scripts/check_verdict.py <file.md>` before finishing and fix every failure. For a batch, one file or one block per name, in the order given, each passing the checker.
 
 ## After a FAIL
 
